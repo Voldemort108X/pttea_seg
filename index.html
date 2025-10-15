@@ -67,37 +67,39 @@
               <a href="https://engineering.yale.edu/research-and-faculty/faculty-directory/lawrence-h-staib">Lawrence H. Staib</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://engineering.yale.edu/research-and-faculty/faculty-directory/james-s-duncan">James S. Duncan</a><sup>1</sup>
+              <a href="https://engineering.yale.edu/research-and-faculty/faculty-directory/james-s-duncan">James S. Duncan</a><sup>1*</sup>
             </span>
             <span class="author-block">
-              <a href="https://vision.cs.yale.edu/members/alex-wong.html">Alex Wong</a><sup>1</sup>
+              <a href="https://vision.cs.yale.edu/members/alex-wong.html">Alex Wong</a><sup>1*</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Yale University,</span>
             <span class="author-block"><sup>2</sup>Chung-Ang University</span>
+            <span class="author-block"><sup>*</sup>Joint supervision</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">ICCV 2025</span>
+            <span style="color: red; font-weight: bold;"> (Highlight)</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span> -->
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2503.16616"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>Preprint</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="/assets/ICCV 2025 Poster.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>Poster</span>
                 </a>
               </span>
               <!-- Video Link. -->
@@ -117,7 +119,7 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code coming soon</span>
+                  <span>Code</span>
                   </a>
               </span>
               <!-- Dataset Link. -->
@@ -138,149 +140,166 @@
   </div>
 </section>
 
-<!-- <section class="hero teaser">
+
+<!-- Motivation -->
+<section class="hero">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section> -->
-
-
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
+      <h2 class="title is-3 has-text-centered">Motivation</h2>
+      <div class="columns is-vcentered is-centered" style="margin-bottom: 1.5rem;">
+        <div class="column is-half has-text-centered">
+          <img src="./assets/motivation.png" alt="Motivation" class="motivation" style="display: block; margin: 0 auto; width: 400px; height: 250px; object-fit: cover;">
         </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
+        <div class="column is-half">
+          <ul style="text-align: left; list-style-type: disc; margin-left: 1.5em;"></ul>
+            <li>Covariate shifts caused by nuisances such as heteroscedastic noise and inconsistent imaging protocols limit the fidelity of medical image segmentation models.</li>
+            <li>Without assuming access to a pre-collected target dataset, which is often impractical, test-time adaptation (TTA) offers a practical solution to calibrate models on-the-fly during inference.</li>
+            <li>Assuming a segmentation model is solely trained on source dataset, our goal is to adapt the model to target data without access to the entire target dataset.</li>
+          </ul>
         </div>
       </div>
-    </div>
-  </div>
-</section> -->
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Coming soon</h2>
-        <div class="content has-text-justified">
-          <!-- <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p> -->
-        </div>
+      <div class="content has-text-centered">
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!--/ Paper video. -->
   </div>
 </section>
 
-    
-
-
-<!-- <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3 has-text-centered">Key components</h2>
+      <h2 class="title is-4 has-text-centered">Region-based Shape Energy Model</h2>
+      <div class="columns is-vcentered is-centered">
+        <div class="column is-half has-text-centered">
+          <img src="./assets/teaser.png" alt="Key components" class="motivation" style="display: block; margin: 0 auto 1.5rem auto; width: 350px; height: 250px; object-fit: cover;">
+        </div>
+        <div class="column is-half">
+          <p style="color: red; font-size: 1.2em; font-weight: bold; margin-bottom: 0.5em;">
+            Why use energy-based model?
+          </p>
+          <ul style="text-align: left; list-style-type: disc; margin-left: 1.5em;">
+            <li>Energy-based models naturally capture distribution changes by reflecting sample likelihood, make them suited for TTA to quantify distribution misalignments. </li>
+            <li>
+              We propose a shape energy model trained on source data, which assigns an energy score at the region level:
+              <ul style="margin-left: 1em;">
+                <li>
+                  - Low energy &rarr; ID (accurate) shapes<br>
+                  - High energy &rarr; OOD (erroneous) predictions<br>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h2 class="title is-4 has-text-centered">Curate Negative Examples for Energy Model Training</h2>
+      <div class="columns is-vcentered is-centered">
+        <div class="column is-half has-text-centered">
+          <img src="./assets/curated_perturb.png" alt="Key components" class="motivation" style="display: block; margin: 0 auto 1.5rem auto; width: 490px; height: 170px; object-fit: cover;">
+        </div>
+        <div class="column is-half">
+          <p style="color: red; font-size: 1.2em; font-weight: bold; margin-bottom: 0.5em;">
+            Impossible to obtain real negative examples (erroneous predictions at inference)?
+          </p>
+          <ul style="text-align: left; list-style-type: disc; margin-left: 1.5em;">
+            <li>Since the input distribution to the energy model is constrained by the predictions afforded by the segmentation model, we propose to explore data space by probing the segmentation model with inputs optimized to simulate OOD examples.</li>
+            <!-- <li> Our formulation assumes two collections of examples, one following the desired distribution (of shapes) and the other out-of-distribution (OOD). The .
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-</section> -->
+</section>
+
+<!-- Method -->
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3 has-text-centered">Method</h2>
+      <img src="./assets/main_framework.png" alt="Main Framework" class="main-framework">
+      <p style="font-size: 0.95em; color: #555; text-align: left; margin-top: 0.5em; margin-bottom: 1.5em;">
+        We assume a segmentation model \( f_\theta(\cdot) \) is pretrained on a source dataset. (a) The energy model \( g_\phi(\cdot) \) is trained to estimate patchwise energy values, using binary reference energy labels based on the mismatch between perturbed predictions \( \hat{Y}_s \) and ground truth shape \( Y_s \) on the source dataset. (b) During adaptation, trained energy model \( g_\phi(\cdot) \) is applied to predictions on test-time distribution, and the BatchNorm layers of \( f_\theta(\cdot) \) are updated iteratively to match with uniform low energy as target.
+      </p>
+      <!-- MathJax for LaTeX rendering -->
+      <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['\\(', '\\)']],
+            displayMath: [['$$', '$$']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <p class="subtitle" style="list-style-type: disc; margin-left: 1.5em;">
+        <li><b>Perturbation curation:</b> We generate negative (implausible) examples by applying FGSM adversarial noise and spatial affine transformations to the input images. </li>
+        <li><b>Label curation:</b> For each perturbed segmentation, we compare it with ground truth and assign categorical energy labels to each region, where regions dissimilar to the ground truth are labeled as high-energy.</li>
+        <li><b>Shape energy model training:</b> A region-based model learns patchwise energy values, assigning high energy to implausible regions and low energy to anatomically valid ones. </li>
+        <li><b>Progressive test-time adaptation:</b> At inference, the segmentation model is iteratively updated to minimize the predicted energy, aligning outputs with plausible anatomical shapes.</li>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3 has-text-centered">Results</h2>
+      <div class="content">
+        <h2 class="title is-4 has-text-centered">Progressive update visualization</h2>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <img src="./assets/acdc_adv_tsne_new.png" style="margin-right: 10px; width: 300px; height: auto;">
+          <div style="border-left: 2px dashed black; height: 180px; margin: 0 10px;"></div>
+          <img src="./assets/acdc_seg_tsne_new.png"  style="margin-left: 10px; width: 300px; height: auto;">
+        </div>
+        <p>
+          Our adversarial perturbation strategy produces images and segmentations that align with OOD cases, validating its effectiveness in modeling real covariate shifts.
+        </p>
+
+        <h2 class="title is-4 has-text-centered">Progressive update visualization</h2>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <img src="./assets/tta_demo_web.gif" alt="Looping GIF" style="margin-right: 10px; width: 600px; height: auto;">
+          <div style="border-left: 2px dashed black; height: 150px; margin: 0 10px;"></div>
+          <img src="./assets/plot_convergence_shortened.png" alt="Quantitative Results" style="margin-left: 10px; width: 250px; height: auto;">
+        </div>
+        <p>
+          Our method progressively refines segmentation quality over iterations (left), while achieving better convergence under the same time budget (right).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Citation-->
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3 has-text-centered">Citation</h2>
+      <div class="content">
+      <pre><code>@article{zhang2025progressive,
+        title={Progressive Test Time Energy Adaptation for Medical Image Segmentation},
+        author={Zhang, Xiaoran and Hong, Byung-Woo and Park, Hyoungseob and Pak, Daniel H and Rickmann, Anne-Marie and Staib, Lawrence H and Duncan, James S and Wong, Alex},
+        journal={arXiv preprint arXiv:2503.16616},
+        year={2025}
+      }
+      </code></pre>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <footer class="footer">
-  <div class="container">
+  <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
           </p>
 
         </div>
