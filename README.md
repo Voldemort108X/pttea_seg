@@ -3,11 +3,11 @@
 ## [[Paper]](https://arxiv.org/abs/2312.00837) [[Project page]](https://voldemort108x.github.io/AdaCS/) [[Poster]](assets/ECCV%202024%20Poster.pdf) [[Slides]](assets/ECCV%202024%20Oral%20Talk.pdf)
 
 ## Motivation
-<img src="assets/motivation.png" width="350" style="float:left; margin-right:20px;">
-<ul style="width: 750px;">
+<img src="assets/motivation.png" width="280" style="float:left; margin-right:20px;">
+<ul style="width: 700px;">
 <li>Covariate shifts caused by nuisances such as heteroscedastic noise and inconsistent imaging protocols limit the fidelity of medical image segmentation models.</li>
-<li>Without assuming access to a pre-collected target dataset, which is often impractical, test-time adaptation (TTA) offers a practical solution to calibrate models on-the-fly during inference.</li>
-<li>Assuming a segmentation model is solely trained on source dataset, our goal is to adapt the model to target data without access to the entire target dataset.</li>
+<li>Without assuming access to a pre-collected target dataset, which is often impractical, TTA offers a practical solution to calibrate models on-the-fly during inference.</li>
+<li>Assuming a segmentation model is solely trained on source, we aim to adapt model to target data without access to entire dataset.</li>
 </ul>
 
 ## Framework
