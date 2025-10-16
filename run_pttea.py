@@ -28,13 +28,11 @@ parser.add_argument('--model_energy_dir', required=True, help='model output dire
 parser.add_argument('--batch_size', required=True, type=int, help='batch size for training')
 parser.add_argument('--result_dir', required=True, help='result directory')
 
-
 # optimization parameters
 parser.add_argument('--num_iterations', type=int, default=10, help='number of epochs to train (default: 100)')
 parser.add_argument('--n_blocks', type=int, default=16, help='number of blocks for the patchwise energy model')
 parser.add_argument('--lr', default=1e-2, type=float, help='learning rate')
 
-                
 # seg model parameters
 parser.add_argument('--model_type', type=str, default='unet', help='type of model to train (default: unet)')
 

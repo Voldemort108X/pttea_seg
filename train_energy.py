@@ -17,7 +17,7 @@ from models.energy import ShapeEnergyModel
 from scheduler import WarmUpCosineDecayScheduler
 
 from dataset import *
-from perturbation import adversarial_attack, transform_adversarial_batch
+from perturbation import transform_adversarial_batch
 
 from augmentation import SpatialAugmentation
 

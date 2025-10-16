@@ -6,7 +6,10 @@ import numpy as np
 import random
 import torch.nn.functional as F
 
-from .utils import create_labels
+try:
+    from .utils import create_labels
+except ImportError:  # allow running without package context
+    from utils import create_labels
 
 from monai.transforms import (
     Compose,
@@ -152,6 +155,48 @@ def nonuniform_label_smooth(array, smooth_max):
 
 # def add_mask_aug(mask_org, mask_perturb)
 
+
+
+class RandomLabelAugmentation:
+    def __init__(self, device, p=0.5):
+        self.device = device
+        self.p = p
+        self.spatial_transforms = Compose([
+            ToDeviced(keys=["label"], device=self.device),
+            RandFlipd(keys=["label"], spatial_axis=[1], prob=p),  # Flip along width
+            RandAffined(
+                keys=["label"],
+                rotate_range=[10, 10],
+                scale_range=[0.1, 0.1],
+                translate_range=[40, 40],
+                padding_mode="zeros",
+                prob=p,
+                device=self.device
+            ),  # Rotate only along the spatial dimensions
+        ])
+    
+    def apply_spatial_transforms(self, label):
+        # device = image.device
+        B, H, W = label.shape
+
+        # label shape assumed to be B x H x W
+
+        # print(B, C, H, W)
+        augmented_label = torch.empty_like(label)
+
+        label = label.unsqueeze(1)  # Add channel dimension
+        # print(image.shape, label.shape)
+        
+        for i in range(B):
+            data = {"label": label[i]}
+            transformed = self.spatial_transforms(data)
+            augmented_label[i] = transformed["label"]
+        
+        return augmented_label
+    
+    def __call__(self, label):
+        label = self.apply_spatial_transforms(label)
+        return label.unsqueeze(1)
 
 
 if __name__ == '__main__':
